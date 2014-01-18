@@ -1,0 +1,4 @@
+Giddy
+=====
+
+Giddy - PHP Framework

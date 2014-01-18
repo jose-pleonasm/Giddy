@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE conf SYSTEM "./config.dtd">
+<conf>
+  <const name="USE_PAGING" desc="zda vypisovat strankovani galerie">1</const>
+	<const name="THUMB_NUM" desc="pocet nahledu na strance">24</const>
+	<const name="ROW_THUMB_NUM" desc="pocet nahledu na radce - jen pro 'informaci'">4</const>
+	<const name="PREFIX" desc="prefix souboru s nahledem">preview/</const>
+	<const name="DESC_FILE" desc="nazev souboru s popiskami">desc.txt</const>
+	<const name="SHOW_DESC" desc="zobrazovat popisky u fotek [0|1]">1</const>
+	<const name="SHOW_THUMB_DESC" desc="zobrazovat popisky i u nahledu [0|1]">1</const>
+	<const name="ONLY_FOTO" desc="zobrazit pouze fotku v novem okne [0|1]">0</const>
+	<const name="IMPLICIT_DESC" desc="implicitni title a alt, tam kde neni popisek">náhled fotografie</const>
+	<const name="GALLERY_NAME" desc="nazev akce, odkud fotky pochazi"></const>
+	<const name="DATE" desc="datum vytvoreni fotek"></const>
+	<const name="AUTHOR" desc="autor fotografii"></const>
+	<const name="NOTE" desc="poznamka k fotogalerii"></const>
+</conf>

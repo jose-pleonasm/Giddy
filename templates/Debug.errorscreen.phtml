@@ -1,0 +1,387 @@
+<?php
+
+/**
+ * Sablona pro vypis chyby tridou Debug
+ *
+ * @link      http://jose.cz/GiddyFramework
+ * @category  Templates
+ * @package   Giddy
+ * @author    Josef Hrabec
+ * @version   $Id: Debug.errorscreen.phtml, 2010-06-30 19:37 $
+ */
+
+error_reporting(0);
+
+ini_set('highlight.comment', '#999; font-style: italic');
+ini_set('highlight.default', '#000');
+ini_set('highlight.html', '#06b');
+ini_set('highlight.keyword', '#d24; font-weight: bold');
+ini_set('highlight.string', '#080');
+
+Debug::$maxLen = 400;
+
+function _getNotClosedTag ($code)
+{
+    $lastClosingTagPos = strrpos($code, "</span>");
+    $codePastLaClTa = substr($code, $lastClosingTagPos);
+    if (strpos($codePastLaClTa, "<span") !== false) {
+      eregi('<span style="[a-z\-]{3,40}:[[:space:]]#[0-9a-f]{1,6};?([[:space:]][a-z\-]{3,40}:[[:space:]][a-z]{1,10})?">', $codePastLaClTa, $regs);
+      return $regs[0];
+    } else {
+      return false;
+    }
+}
+
+function _exposeIncriminatingPart ($file, $line, $scope = 5)
+{
+  echo "<div class=\"code\">\n";
+  $line = $line-1;
+  $source = explode("\n", @highlight_file($file, true));
+  $source = str_replace(array("<code>", "</code>"), "", $source);
+  $codeBegin = $source[0];
+  $source = explode("<br />", $source[1]);
+  $lineStart = max(1, $line-$scope);
+  $lineEnd   = $line+$scope;
+  $source = array_slice($source, $lineStart, 2*$scope+1, TRUE);
+
+  echo "<table>\n";
+  $continueTag = '';
+  foreach ($source as $i => $actualLine) {
+    echo "<tr>\n";
+    if (!empty($codeBegin)) {
+      $actualLine = $codeBegin . $actualLine;
+      $codeBegin = NULL;
+    }
+    if (!empty($continueTag)) {
+      $actualLine = $continueTag . $actualLine;
+      $continueTag = '';
+    }
+    if (_getNotClosedTag($actualLine) !== false) {
+      $continueTag = _getNotClosedTag($actualLine);
+      $actualLine .= "</span>";
+    }
+    if ($i == $line) {
+      echo "<th class=\"this\">" . ($i+1) . "</th><td class=\"this\">" . strip_tags($actualLine) . "</td>\n";
+    } else {
+      echo "<th>" . ($i+1) . "</th><td>" . $actualLine . "</td>\n";
+    }
+    echo "</tr>\n";
+  }
+  echo "</table>\n";
+  echo "</div>\n";
+}
+
+
+function _getReportInfo ()
+{
+  return 'Report generated at ' . date('Y-m-d H:i:s');
+}
+
+function _getGiddyInfo ()
+{
+  if (class_exists('GiddyFramework')) {
+    return GiddyFramework::NAME . ' ' . GiddyFramework::VERSION . ' <em>(Released on ' . GiddyFramework::REVISION . ')</em>';
+  } else {
+    return 'Giddy Framework';
+  }
+}
+
+function _getErrorType ($severity)
+{
+  @$types = array(
+    E_ERROR => 'Error',
+    E_USER_ERROR => 'User error',
+    E_WARNING => 'Warning',
+    E_USER_WARNING => 'User warning',
+    E_NOTICE => 'Notice',
+    E_USER_NOTICE => 'User notice',
+    E_STRICT => 'Strict standards',
+    E_DEPRECATED => 'Deprecated',
+    E_USER_DEPRECATED => 'User deprecated',
+  );
+
+  return $types[$severity];
+}
+
+function _getGetMethods ($class)
+{
+  $inappositeMethods = array('getMessage', 'getCode', 'getFile', 'getLine', 'getTrace', 'getTraceAsString');
+  $relMethods = array();
+  $methods = get_class_methods($class);
+  foreach ($methods as $method) {
+    if (substr($method, 0, 3) == 'get'
+        && !in_array($method, $inappositeMethods)) {
+      $relMethods[] = $method;
+    }
+  }
+  return $relMethods;
+}
+
+
+$foregoingContents = @ob_get_contents();
+if (!empty($foregoingContents)) {
+  @ob_end_clean();
+}
+
+$otherMethods = is_object($e) ? _getGetMethods($class) : NULL;
+
+$title = is_object($e) ? $class : $type;
+
+?>
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>'; echo "\n"; ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="content-language" content="cs" />
+  <meta http-equiv="content-script-type" content="text/javascript" />
+  <meta http-equiv="content-style-type" content="text/css" />
+  <meta name="robots" content="noindex,noarchive" />
+  <meta name="generator" content="Giddy Framework" />
+  <style type="text/css">
+  /* <![CDATA[ */
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    font-size: 84%;
+    font-family: Verdana, "Geneva CE", lucida, sans-serif;
+  }
+  #giddyErrorScreen {
+  }
+  #giddyError {
+    background-color: red;
+    color: white;
+  }
+  #giddyErrorScreen h1 {
+    margin: 18px 0 0 0;
+    padding: 0;
+    font-size: 1.7em;
+    font-weight: normal;
+  }
+  #giddyErrorScreen .panel {
+    padding: 1px 22px;
+    border-bottom: solid 1px #eee;
+  }
+  #giddyErrorScreen .container {
+    padding: 0.1em 1em 1em 1em;
+    background-color: #f5f5f5;
+  }
+  #giddyErrorScreen .container h3 {
+    font-size: 1em;
+  }
+  #giddyErrorScreen .presentive {
+    padding: 0;
+    border-collapse: collapse;
+    background-color: #ffffcc;
+    list-style: none;
+  }
+  #giddyErrorScreen .presentive th,
+  #giddyErrorScreen .presentive td {
+    padding: 3px 4px;
+    border: solid 1px #eeeebb;
+  }
+  #giddyErrorScreen .presentive th {
+    text-align: left;
+    font-size: 0.85em;
+  }
+  #giddyErrorScreen .presentive li {
+    margin: 0;
+    padding: 3px 4px;
+    border-bottom: solid 1px #eeeebb;
+    
+  }
+  #giddyErrorScreen pre.presentive {
+    padding: 3px 4px;
+    border-bottom: solid 1px #eeeebb;
+    font-size: 1em;
+    
+  }
+  #giddyErrorScreen .code {
+    padding: 5px;
+    background-color: #fff;
+    border: solid 1px #D0D0D0;
+  }
+  #giddyErrorScreen .code table {
+    border-collapse: collapse;
+    font-size: 1em;
+    font-family: "Courier New", Courier, monospace;
+  }
+  #giddyErrorScreen .code th {
+    padding-right: 0.2em !important;
+    padding-left: 0.2em !important;
+    width: 2.2em !important;
+    border-right: solid 1px #eee;
+    text-align: right;
+  }
+  #giddyErrorScreen .code th.this,
+  #giddyErrorScreen  .code td.this {
+    width: 100%;
+    background-color: #2e2e2e; /* #ff0000 */
+    color: #fff;
+    font-weight: bold;
+  }
+  #giddyErrorScreen ol {
+    margin: 1em 0 0 0;
+  }
+  #giddyErrorScreen li {
+    margin: 0 0 1.6em 0;
+  }
+  #giddyErrorScreen ol ol {
+    margin: 0.6em 0 1em 0;
+    padding: 0;
+    list-style-position: inside;
+  }
+  #giddyErrorScreen ol ol li {
+    margin: 0 0 0.6em 0;
+    padding: 3px 5px;
+    background-color: #ffffcc;
+    color: #000;
+  }
+  #giddyErrorScreen li:last-child,
+  #giddyErrorScreen ol ol li:last-child {
+    margin: 0 0 0 0;
+  }
+  #giddyErrorScreen .dump span {
+    color: #c16549;
+  }
+  #giddyErrorScreen h4 {
+    margin: 0 0 0.6em 0;
+    font-size: 0.8em;
+  }
+  #giddyErrorScreen .action {
+    text-decoration: none;
+    color: #698FA9;
+  }
+  #giddyErrorScreen #footer {
+    padding: 10px 0 0 15px;
+    font-size: 0.8em;
+  }
+  /* ]]> */
+  </style>
+  <title><?php echo $title ?></title>
+</head>
+<body>
+  <div id="giddyErrorScreen">
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+      document.write('<style type="text/css"> .collapsed { display: none; } </style>');
+  
+      function netteToggle(link, panelId)
+      {
+        var span = link.getElementsByTagName('span')[0];
+        var panel = document.getElementById(panelId);
+        var collapsed = panel.currentStyle ? panel.currentStyle.display == 'none' : getComputedStyle(panel, null).display == 'none';
+  
+        span.innerHTML = String.fromCharCode(collapsed ? 0x25bc : 0x25ba);
+        panel.style.display = collapsed ? 'block' : 'none';
+  
+        return true;
+      }
+    /* ]]> */
+    </script>
+
+    <div id="giddyError" class="panel">
+      <h1><?php echo $title . (!empty($severity) ? ' [' . _getErrorType($severity) . '] ' : '') . ' #' . $code ?></h1>
+      <p><strong><?php echo $msg ?></strong></p>
+    </div><!-- div#giddyError -->
+    <div id="giddyMain" class="panel">
+      <h2>Source file</h2>
+      <div class="container">
+      <p><?php echo $file ?> (<?php echo $line ?>)</p>
+<?php _exposeIncriminatingPart($file, $line, 6) ?>
+      </div><!-- div.container -->
+    </div><!-- div#giddyMain -->
+<?php if (!empty($otherMethods)) { ?>
+    <div id="giddyOtherMethods" class="panel">
+      <h2>Other "get" methods</h2>
+      <div class="container">
+        <ol>
+<?php $rank = 1; ?>
+<?php foreach ($otherMethods as $method) { ?>
+          <li>
+            <h4>
+              <?php echo $method ?>
+              <a href="#" onclick="return !netteToggle(this, 'om-<?php echo $rank ?>')" class="action">return <span>&#x25ba;</span></a>
+            </h4>
+            <pre id="om-<?php echo $rank ?>" class="presentive dump collapsed"><?php Debug::$maxLen = 1000; echo Debug::dump(call_user_func(array($e, $method))); ?></pre>
+          </li>
+<?php $rank++; ?>
+<?php } ?>
+        </ol>
+      </div><!-- div.container -->
+    </div><!-- div#giddyOtherMethods -->
+<?php } ?>
+    <div id="giddyStack" class="panel">
+      <h2>Call stack</h2>
+      <div class="container">
+<?php if (!empty($trace)) { ?>
+      <ol>
+<?php $rank = 1; ?>
+<?php foreach ($trace as $item) { ?>
+        <li>
+          <h4>
+          <?php echo $item['file'] ?> (<?php echo $item['line'] ?>)
+          <a href="#" onclick="return !netteToggle(this, 'src-<?php echo $rank ?>')" class="action">source <span>&#x25ba;</span></a>
+<?php if (isset($item['class'])) { ?>
+          <?php echo $item['class'] ?>
+<?php } ?>
+<?php if (isset($item['type'])) { ?>
+          <?php echo $item['type'] ?>
+<?php } ?>
+<?php if (isset($item['function'])) { ?>
+          <?php echo $item['function'] ?>()
+<?php } ?>
+<?php if (!empty($item['args'])) { ?>
+          <a href="#" onclick="return !netteToggle(this, 'args-<?php echo $rank ?>')" class="action">args <span>&#x25ba;</span></a>
+<?php } ?>
+          </h4>
+<?php if (!empty($item['args'])) { ?>
+          <ol id="args-<?php echo $rank ?>" class="collapsed">
+<?php foreach ($item['args'] as $arg) { ?>
+            <li class="dump"><?php echo Debug::dump($arg) ?></li>
+<?php } ?>
+          </ol>
+<?php } ?>
+<div id="src-<?php echo $rank ?>" class="collapsed"><?php _exposeIncriminatingPart($item['file'], $item['line'], 5) ?></div>
+        </li>
+<?php $rank++; ?>
+<?php } ?>
+      </ol>
+<?php } else { ?>
+      <p><em>No backtrace...</em></p>
+<?php } ?>
+      </div><!-- div.container -->
+    </div><!-- div#giddyStack -->
+    <div id="giddyEnv" class="panel">
+      <h2>Environment</h2>
+      <div class="container">
+        <h3>$_SERVER <a href="#" onclick="return !netteToggle(this, 'env-1')" class="action"><span>&#x25ba;</span></a></h3>
+        <table id="env-1" class="presentive collapsed">
+<?php foreach ($_SERVER as $key => $value) { ?>
+          <tr>
+            <th><?php echo $key ?></th><td class="dump"><?php echo Debug::dump($value) ?></td>
+          </tr>
+<?php } ?>
+        </table>
+        <h3>Included files <a href="#" onclick="return !netteToggle(this, 'env-2')" class="action"><span>&#x25ba;</span></a></h3>
+        <ol id="env-2" class="presentive collapsed">
+<?php foreach (get_included_files() as $key => $value) { ?>
+          <li><?php echo $value ?></li>
+<?php } ?>
+        </ol>
+<?php if (!empty($foregoingContents)) { ?>
+        <h3>Foregoing contents <a href="#" onclick="return !netteToggle(this, 'env-3')" class="action"><span>&#x25ba;</span></a></h3>
+        <pre id="env-3" class="presentive collapsed"><?php echo htmlspecialchars($foregoingContents) ?></pre>
+<?php } ?>
+      </div><!-- div.container -->
+    </div><!-- div#giddyEnv -->
+    <div id="footer">
+      <p><?php echo _getReportInfo() ?></p>
+      <p><?php echo _getGiddyInfo() ?></p>
+    </div><!-- div#footer -->
+  </div><!-- div#giddyErrorScreen -->
+</body>
+</html>

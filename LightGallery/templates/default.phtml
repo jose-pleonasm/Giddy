@@ -1,0 +1,53 @@
+<?php
+
+?>
+
+<div id="<?php echo $name ?>" class="tpf-gallery">
+<?php if ($useJs && !defined('LG_JSWIN_PRINTED')) { ?>
+<?php define('LG_JSWIN_PRINTED', 1); ?>
+<script type="text/javascript">
+function openWin (location)
+{
+  return window.open(location, "galleryWindow", "<?php echo $this->settings['jsWinParams'] ?>");
+}
+</script>
+<?php } ?>
+<?php if (isset($title)) { ?>
+<h3><?php echo $title ?></h3>
+<?php } ?>
+<?php if (isset($author)) { ?>
+<p class="author"><?php echo $author ?></p>
+<?php } ?>
+<?php if (isset($date)) { ?>
+<p class="date"><?php echo $date ?></p>
+<?php } ?>
+<?php if (isset($note)) { ?>
+<p class="note"><?php echo $note ?></p>
+<?php } ?>
+<div class="gallery-block">
+<?php for ($i = $beginPic; $i < $endPic; $i++) { ?>
+  <div class="item">
+    <a href="<?php echo $path . $items[$i]['original'] ?>"
+       <?php if (isset($pic_desc[$items[$i]['original']])) { ?>title="<?php echo $pic_desc[$items[$i]['original']] ?>"<?php } ?>
+       <?php if ($useJs) { ?>onclick="return !openWin(this.href)"<?php } ?>
+       <?php if ($useLightbox) { ?>rel="lightbox[<?php echo $this->name ?>]"<?php } ?>>
+      <img src="<?php echo $path . $items[$i]['thumb'] ?>" alt="<?php echo $desc[$items[$i]['original']] ?>" />
+    </a>
+<?php if (isset($pic_desc[$items[$i]['original']]) && $this->cfg->show_thumb_desc) { ?>
+  <p class="pic-desc"><?php echo $pic_desc[$items[$i]['original']] ?></p>
+<?php } ?>
+  </div>
+<?php } ?>
+</div>
+<?php if ($this->cfg->use_paging) { ?>
+<p class="pageMenu"><?php
+for ($i = $firstPage; $i <= $lastPage; $i++) {
+  if ($i == $page) {
+    echo ' <strong>' . $i . '</strong> ';
+  } else {
+    echo ' <a href="' . $hrefBase . $i . '">' . $i . '</a> ';
+  }
+}
+?></p>
+<?php } ?>
+</div>

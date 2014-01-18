@@ -1,0 +1,161 @@
+<?php
+
+/**
+ * Sablona pro vypis chyby tridou Base
+ *
+ * @link      http://jose.cz/GiddyFramework
+ * @category  Templates
+ * @package   Giddy
+ * @author    Josef Hrabec
+ * @version   $Id: Base.errorscreen.phtml, 2009-10-01 12:40 $
+ */
+
+error_reporting(0);
+$errorPagePrinted = true;
+
+function _title ()
+{
+  return 'Chyba aplikace';
+}
+
+function _getActualUrl ()
+{
+  $protocol = 'http';
+  if (isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+    $protocol .= 's';
+  }
+  return $protocol . '://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+}
+
+function _getContact ()
+{
+  return '<p>Kontakt na správce webu: <a href="mailto:' . $_SERVER['SERVER_ADMIN'] . '">'
+         . $_SERVER['SERVER_ADMIN'] . '</a></p>';
+}
+
+function _getRequestInfo ()
+{
+  return 'Request at ' . date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);
+}
+
+function _getReportInfo ()
+{
+  return 'Page generated at ' . date('Y-m-d H:i:s');
+}
+
+function _getGiddyInfo ()
+{
+  if (class_exists('GiddyFramework')) {
+    return GiddyFramework::NAME . ' ' . GiddyFramework::VERSION . ' <em>(Released on ' .GiddyFramework::REVISION . ')</em>';
+  } else {
+    return 'Giddy Framework';
+  }
+}
+
+?>
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>'; echo "\n"; ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="content-language" content="cs" />
+  <meta http-equiv="content-script-type" content="text/javascript" />
+  <meta http-equiv="content-style-type" content="text/css" />
+  <meta name="robots" content="noindex,noarchive" />
+  <meta name="generator" content="Giddy Framework" />
+  <style type="text/css">
+  /* <![CDATA[ */
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    font-size: 84%;
+    font-family: Verdana, "Geneva CE", lucida, sans-serif;
+  }
+  #giddyErrorPage {
+  }
+  a {
+    color: #4197e3;
+  }
+  #main {
+    margin: 3em 2em 1em 2em;
+    padding: 1em 1em 4em 1em;
+    background-color: #f5f5f5;
+  }
+  #footer {
+    padding: 0 3em;
+    font-size: 0.8em;
+  }
+  h2 {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+  }
+  h3 {
+    margin: 2.2em 0 0.9em 0;
+    padding: 0;
+    font-size: 1.1em;
+  }
+  p, ul {
+    margin: 0 0 1em 0;
+    line-height: 1.4em;
+  }
+  ul {
+    margin: 0 0 1em 0;
+    padding: 0 0 0 1.8em;
+  }
+  .panel {
+    border-bottom: solid 1px #ddd;
+  }
+  /* ]]> */
+  </style>
+  <title><?php echo _title() ?></title>
+</head>
+<body>
+  <div id="giddyErrorPage">
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+      document.write('<style type="text/css"> .collapsed { display: none; } </style>');
+  
+      function netteToggle(link, panelId)
+      {
+        var span = link.getElementsByTagName('span')[0];
+        var panel = document.getElementById(panelId);
+        var collapsed = panel.currentStyle ? panel.currentStyle.display == 'none' : getComputedStyle(panel, null).display == 'none';
+  
+        span.innerHTML = String.fromCharCode(collapsed ? 0x25bc : 0x25ba);
+        panel.style.display = collapsed ? 'block' : 'none';
+  
+        return true;
+      }
+    /* ]]> */
+    </script>
+
+   <div id="main">
+     <h2><?php echo _title() ?></h2>
+     <p><a href="<?php echo _getActualUrl() ?>"><?php echo _getActualUrl() ?></a></p>
+     <h3 class="panel">Info</h3>
+     <p>V aplikaci se vyskytla závažná chyba a proto není možné akci provést</p>
+     <h3 class="panel">Postup</h3>
+     <ul>
+       <li>Přejděte <a href="javascript: history.back();">zpět</a> a zkuste akci znovu provést</li>
+       <li>Zkuste akci opakovat později</li>
+       <li>Kontaktujte správce webu</li>
+     </ul>
+<?php if (function_exists('_getContact')) { ?>
+     <h3 class="panel">Kontakt</h3>
+     <?php echo _getContact() ?>
+<?php } ?>
+   </div><!-- div#main -->
+
+    <div id="footer">
+      <p><?php echo _getReportInfo() ?></p>
+    </div><!-- div#footer -->
+  </div><!-- div#giddyErrorPage -->
+</body>
+</html>

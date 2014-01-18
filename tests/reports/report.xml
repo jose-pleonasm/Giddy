@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="111" assertions="241" failures="0" errors="0" time="1.104847">
+    <testsuite name="BaseTestCase" file="E:\www\Giddy\tests\Base\BaseTestCase.php" fullPackage="Giddy" package="Giddy" tests="6" assertions="11" failures="0" errors="0" time="0.062083">
+      <testcase name="testBase" class="BaseTestCase" file="E:\www\Giddy\tests\Base\BaseTestCase.php" line="30" assertions="1" time="0.005748"/>
+      <testcase name="testSetRoot" class="BaseTestCase" file="E:\www\Giddy\tests\Base\BaseTestCase.php" line="37" assertions="2" time="0.005754"/>
+      <testcase name="testSetRoot2" class="BaseTestCase" file="E:\www\Giddy\tests\Base\BaseTestCase.php" line="46" assertions="1" time="0.006200"/>
+      <testcase name="testImport" class="BaseTestCase" file="E:\www\Giddy\tests\Base\BaseTestCase.php" line="57" assertions="1" time="0.006430"/>
+      <testcase name="testHighImport" class="BaseTestCase" file="E:\www\Giddy\tests\Base\BaseTestCase.php" line="67" assertions="4" time="0.031353"/>
+      <testcase name="testImportException" class="BaseTestCase" file="E:\www\Giddy\tests\Base\BaseTestCase.php" line="82" assertions="2" time="0.006598"/>
+    </testsuite>
+    <testsuite name="gToolsTestCase" file="E:\www\Giddy\tests\tools\toolsTestCase.php" tests="5" assertions="19" failures="0" errors="0" time="0.030527">
+      <testcase name="testCutText" class="gToolsTestCase" file="E:\www\Giddy\tests\tools\toolsTestCase.php" line="23" assertions="5" time="0.006339"/>
+      <testcase name="testPhpToSqlDateFormat" class="gToolsTestCase" file="E:\www\Giddy\tests\tools\toolsTestCase.php" line="34" assertions="1" time="0.005940"/>
+      <testcase name="testIntToPrice" class="gToolsTestCase" file="E:\www\Giddy\tests\tools\toolsTestCase.php" line="39" assertions="2" time="0.005832"/>
+      <testcase name="testSerialize" class="gToolsTestCase" file="E:\www\Giddy\tests\tools\toolsTestCase.php" line="45" assertions="1" time="0.005790"/>
+      <testcase name="testTruepath" class="gToolsTestCase" file="E:\www\Giddy\tests\tools\toolsTestCase.php" line="51" assertions="10" time="0.006626"/>
+    </testsuite>
+    <testsuite name="SystemTestCase" file="E:\www\Giddy\tests\System\SystemTestCase.php" fullPackage="Giddy" package="Giddy" tests="2" assertions="2" failures="0" errors="0" time="0.012115">
+      <testcase name="testIsIncludable" class="SystemTestCase" file="E:\www\Giddy\tests\System\SystemTestCase.php" line="28" assertions="1" time="0.005903"/>
+      <testcase name="testIncludablePathsSimple" class="SystemTestCase" file="E:\www\Giddy\tests\System\SystemTestCase.php" line="36" assertions="1" time="0.006212"/>
+    </testsuite>
+    <testsuite name="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" fullPackage="Giddy" package="Giddy" tests="20" assertions="40" failures="0" errors="0" time="0.116767">
+      <testcase name="testConstruct" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="45" assertions="1" time="0.005772"/>
+      <testcase name="testAddAll" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="56" assertions="1" time="0.005862"/>
+      <testcase name="testAddAll2" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="68" assertions="2" time="0.005951"/>
+      <testcase name="testAddAll3" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="85" assertions="4" time="0.005944"/>
+      <testcase name="testSimplyAdd" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="104" assertions="1" time="0.005805"/>
+      <testcase name="testData" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="117" assertions="1" time="0.005671"/>
+      <testcase name="testAdd" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="127" assertions="1" time="0.005710"/>
+      <testcase name="testAdd2" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="141" assertions="4" time="0.006021"/>
+      <testcase name="testAdd3" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="160" assertions="1" time="0.005912"/>
+      <testcase name="testRemove" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="176" assertions="2" time="0.005857"/>
+      <testcase name="testRemove2" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="192" assertions="1" time="0.005759"/>
+      <testcase name="testSet" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="209" assertions="2" time="0.005947"/>
+      <testcase name="testSize" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="226" assertions="1" time="0.005764"/>
+      <testcase name="testContains" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="242" assertions="2" time="0.005776"/>
+      <testcase name="testIndexOf" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="258" assertions="2" time="0.005772"/>
+      <testcase name="testRemoveRange" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="274" assertions="3" time="0.005851"/>
+      <testcase name="testRemoveRange2" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="293" assertions="3" time="0.005876"/>
+      <testcase name="testRemoveRangeEmpty" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="312" assertions="4" time="0.005846"/>
+      <testcase name="testSubList" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="333" assertions="2" time="0.005941"/>
+      <testcase name="testLastIndexOf" class="ArrayListTestCase" file="E:\www\Giddy\tests\Collections\ArrayListTestCase.php" line="351" assertions="2" time="0.005730"/>
+    </testsuite>
+    <testsuite name="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" fullPackage="Giddy" package="Giddy" tests="13" assertions="25" failures="0" errors="0" time="0.074851">
+      <testcase name="testBase" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="44" assertions="1" time="0.005664"/>
+      <testcase name="testPut" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="52" assertions="3" time="0.005753"/>
+      <testcase name="testPutAll" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="68" assertions="1" time="0.006364"/>
+      <testcase name="testGet" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="81" assertions="2" time="0.005750"/>
+      <testcase name="testRemove" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="96" assertions="2" time="0.005675"/>
+      <testcase name="testIsEmpty" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="108" assertions="2" time="0.005714"/>
+      <testcase name="testClear" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="121" assertions="3" time="0.005701"/>
+      <testcase name="testContainsKey" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="138" assertions="2" time="0.005658"/>
+      <testcase name="testContainsValue" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="153" assertions="2" time="0.005675"/>
+      <testcase name="testEquals" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="169" assertions="2" time="0.005719"/>
+      <testcase name="testCount" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="185" assertions="2" time="0.005788"/>
+      <testcase name="testKeyOf" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="201" assertions="2" time="0.005736"/>
+      <testcase name="testImport" class="HashtableTestCase" file="E:\www\Giddy\tests\Collections\HashtableTestCase.php" line="215" assertions="1" time="0.005654"/>
+    </testsuite>
+    <testsuite name="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" fullPackage="Giddy" package="Giddy" tests="17" assertions="35" failures="0" errors="0" time="0.099073">
+      <testcase name="testTMBase" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="44" assertions="1" time="0.005739"/>
+      <testcase name="testPut" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="52" assertions="3" time="0.005778"/>
+      <testcase name="testGet" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="68" assertions="2" time="0.005698"/>
+      <testcase name="testRemove" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="83" assertions="2" time="0.005713"/>
+      <testcase name="testIsEmpty" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="95" assertions="2" time="0.005740"/>
+      <testcase name="testClear" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="108" assertions="3" time="0.005823"/>
+      <testcase name="testContainsKey" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="125" assertions="2" time="0.005679"/>
+      <testcase name="testContainsValue" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="140" assertions="2" time="0.006003"/>
+      <testcase name="testEquals" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="156" assertions="2" time="0.005697"/>
+      <testcase name="testCount" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="172" assertions="2" time="0.005788"/>
+      <testcase name="testKeyOf" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="188" assertions="2" time="0.005782"/>
+      <testcase name="testFirstKey" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="203" assertions="1" time="0.005816"/>
+      <testcase name="testLastKey" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="218" assertions="1" time="0.005791"/>
+      <testcase name="testHeadMap" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="233" assertions="2" time="0.005845"/>
+      <testcase name="testSubMap" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="250" assertions="4" time="0.006044"/>
+      <testcase name="testTailMap" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="270" assertions="2" time="0.005804"/>
+      <testcase name="testPutAll" class="TreeMapTestCase" file="E:\www\Giddy\tests\Collections\TreeMapTestCase.php" line="287" assertions="2" time="0.006333"/>
+    </testsuite>
+    <testsuite name="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" fullPackage="Giddy" package="Giddy" tests="15" assertions="51" failures="0" errors="0" time="0.088982">
+      <testcase name="testValidString" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="34" assertions="2" time="0.005803"/>
+      <testcase name="testInvalidString" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="44" assertions="2" time="0.005746"/>
+      <testcase name="testInteger" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="54" assertions="3" time="0.005736"/>
+      <testcase name="testFloat" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="66" assertions="7" time="0.006017"/>
+      <testcase name="testNumeric" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="86" assertions="7" time="0.006073"/>
+      <testcase name="testArray" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="106" assertions="1" time="0.005694"/>
+      <testcase name="testObject" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="114" assertions="1" time="0.005689"/>
+      <testcase name="testEnum" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="123" assertions="3" time="0.005778"/>
+      <testcase name="testValue" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="135" assertions="1" time="0.005688"/>
+      <testcase name="testEmail" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="143" assertions="4" time="0.005891"/>
+      <testcase name="testDate" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="157" assertions="1" time="0.006024"/>
+      <testcase name="testDateCz" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="165" assertions="3" time="0.006112"/>
+      <testcase name="testTime" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="177" assertions="1" time="0.006020"/>
+      <testcase name="testURL" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="185" assertions="11" time="0.006886"/>
+      <testcase name="testNick" class="GeneralValidatorTestCase" file="E:\www\Giddy\tests\GeneralValidator\GeneralValidatorTestCase.php" line="214" assertions="4" time="0.005825"/>
+    </testsuite>
+    <testsuite name="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" fullPackage="Giddy" package="Giddy" tests="13" assertions="26" failures="0" errors="0" time="0.077165">
+      <testcase name="testCfgBase" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="27" assertions="2" time="0.005847"/>
+      <testcase name="testConstructor1" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="37" assertions="1" time="0.005735"/>
+      <testcase name="testConstructor2" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="49" assertions="1" time="0.006495"/>
+      <testcase name="testGet" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="61" assertions="2" time="0.005998"/>
+      <testcase name="testExtort" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="78" assertions="5" time="0.005831"/>
+      <testcase name="testRedeclare1" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="93" assertions="2" time="0.005901"/>
+      <testcase name="testRedeclare2" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="111" assertions="1" time="0.005665"/>
+      <testcase name="testRemove" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="121" assertions="2" time="0.005886"/>
+      <testcase name="testEmpty" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="141" assertions="2" time="0.005743"/>
+      <testcase name="testCount" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="154" assertions="2" time="0.005838"/>
+      <testcase name="testArrayBehaviour" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="170" assertions="3" time="0.006360"/>
+      <testcase name="testCfgTree" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="188" assertions="1" time="0.005662"/>
+      <testcase name="testExpand" class="CfgTestCase" file="E:\www\Giddy\tests\Cfg\CfgTestCase.php" line="200" assertions="2" time="0.006205"/>
+    </testsuite>
+    <testsuite name="DBITestCase" file="E:\www\Giddy\tests\DBI\DBITestCase.php" fullPackage="Giddy" package="Giddy" tests="9" assertions="10" failures="0" errors="0" time="0.140974">
+      <testcase name="testConnect" class="DBITestCase" file="E:\www\Giddy\tests\DBI\DBITestCase.php" line="43" assertions="1" time="0.008109"/>
+      <testcase name="testEscapeString" class="DBITestCase" file="E:\www\Giddy\tests\DBI\DBITestCase.php" line="50" assertions="1" time="0.006046"/>
+      <testcase name="testQuery" class="DBITestCase" file="E:\www\Giddy\tests\DBI\DBITestCase.php" line="63" assertions="1" time="0.030219"/>
+      <testcase name="testResults" class="DBITestCase" file="E:\www\Giddy\tests\DBI\DBITestCase.php" line="70" assertions="1" time="0.008488"/>
+      <testcase name="testVar" class="DBITestCase" file="E:\www\Giddy\tests\DBI\DBITestCase.php" line="78" assertions="1" time="0.008380"/>
+      <testcase name="testVarEmpty" class="DBITestCase" file="E:\www\Giddy\tests\DBI\DBITestCase.php" line="84" assertions="1" time="0.008343"/>
+      <testcase name="testInsert" class="DBITestCase" file="E:\www\Giddy\tests\DBI\DBITestCase.php" line="90" assertions="2" time="0.037617"/>
+      <testcase name="testDelete" class="DBITestCase" file="E:\www\Giddy\tests\DBI\DBITestCase.php" line="101" assertions="1" time="0.025324"/>
+      <testcase name="testDBIntegrity" class="DBITestCase" file="E:\www\Giddy\tests\DBI\DBITestCase.php" line="112" assertions="1" time="0.008448"/>
+    </testsuite>
+    <testsuite name="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" fullPackage="Giddy" package="Giddy" tests="11" assertions="22" failures="0" errors="0" time="0.402310">
+      <testcase name="testBegin" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="138" assertions="1" time="0.053977"/>
+      <testcase name="testImportData1" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="145" assertions="1" time="0.005937"/>
+      <testcase name="testImportData2" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="152" assertions="1" time="0.006000"/>
+      <testcase name="testImportData3" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="159" assertions="1" time="0.006032"/>
+      <testcase name="testEnd" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="165" assertions="0" time="0.007661"/>
+      <testcase name="testImportWithModify" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="171" assertions="4" time="0.063149"/>
+      <testcase name="testTransformImport" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="202" assertions="3" time="0.056861"/>
+      <testcase name="testTransformImportWithModify" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="238" assertions="5" time="0.066269"/>
+      <testcase name="testTransformImportWithModify_insertDefault" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="293" assertions="2" time="0.067162"/>
+      <testcase name="testRegulatedImport" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="330" assertions="3" time="0.059025"/>
+      <testcase name="testBackupInfo" class="ImportFromXmlTestCase" file="E:\www\Giddy\tests\Backup\ImportFromXmlTestCase.php" line="356" assertions="1" time="0.010237"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

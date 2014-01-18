@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT conf (const)*>
+<!ELEMENT const (#PCDATA) >
+
+<!ATTLIST const 
+      name CDATA #REQUIRED
+      desc CDATA #IMPLIED
+ >

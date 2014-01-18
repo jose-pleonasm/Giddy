@@ -1,0 +1,75 @@
+<?php
+function _getLocalityClass ($picsInLine, $lastPic, $itemNum)
+{
+  $classes = array();
+
+  // uplne prvni
+  if ($itemNum == 0) {
+    $classes[] = 'beginLine';
+
+  // prvni v radku
+  } elseif (($itemNum % $picsInLine) == 0) {
+    $classes[] = 'beginLine';
+  }
+
+  // posledni v radku
+  if (($itemNum % $picsInLine) == $picsInLine-1) {
+    $classes[] = 'endLine';
+
+  //uplne posledni
+  } elseif ($itemNum == ($lastPic - 1)) {
+    $classes[] = 'endLine';
+  }
+
+  return implode(' ', $classes);
+}
+
+function _paging ($firstPage, $lastPage, $actualPage, $hrefBase)
+{
+  $menu = '';
+  for ($i = $firstPage; $i <= $lastPage; $i++) {
+    if ($i == $actualPage) {
+      $menu .= ' <strong>' . $i . '</strong> ';
+    } else {
+      $menu .= ' <a href="' . $hrefBase . $i . '">' . $i . '</a> ';
+    }
+  }
+  return $menu;
+}
+?>
+
+<div id="<?php echo $name ?>" class="tpf-gallery">
+<?php if ($useJs && !defined('LG_JSWIN_PRINTED')) { ?>
+<?php define('LG_JSWIN_PRINTED', 1); ?>
+<script type="text/javascript">
+function openWin (location)
+{
+  return window.open(location, "galleryWindow", "<?php echo $this->settings['jsWinParams'] ?>");
+}
+</script>
+<?php } ?>
+<?php if (isset($title)) { ?>
+<h3><?php echo $title ?></h3>
+<?php } ?>
+<div class="gallery-block">
+<?php for ($i = $beginPic; $i < $endPic; $i++) { ?>
+  <div class="card <?php echo _getLocalityClass ($picsInLine, $lastPic, $i) ?>">
+    <p class="card-photo"><a href="<?php echo $path . $items[$i]['original'] ?>"
+       <?php if (isset($pic_desc[$items[$i]['original']])) { ?>title="<?php echo $pic_desc[$items[$i]['original']] ?>"<?php } ?>
+       <?php if ($useJs) { ?>onclick="return !openWin(this.href)"<?php } ?>
+       <?php if ($useLightbox) { ?>rel="lightbox[<?php echo $this->name ?>]"<?php } ?>>
+      <img src="<?php echo $path . $items[$i]['thumb'] ?>" alt="<?php echo $desc[$items[$i]['original']] ?>" />
+    </a></p>
+<?php if (isset($pic_desc[$items[$i]['original']]) && $this->cfg->show_thumb_desc) { ?>
+  <p class="card-desc"><?php echo $pic_desc[$items[$i]['original']] ?></p>
+<?php } ?>
+<?php if (isset($author)) { ?>
+    <p class="card-author">autor <strong><?php echo $author ?></strong></p>
+<?php } ?>
+  </div>
+<?php } ?>
+</div><!-- div.gallery-block -->
+<?php if ($this->cfg->use_paging) { ?>
+<p class="pageMenu"><?php echo _paging ($firstPage, $lastPage, $page, $hrefBase) ?></p>
+<?php } ?>
+</div><!-- div.tpf-gallery -->

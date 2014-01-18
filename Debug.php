@@ -3,7 +3,7 @@
 /**
  * Nastroj pro ladeni
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: Debug.php, 2011-08-12 13:27 $

@@ -3,7 +3,7 @@
 /**
  * Jednoducha implementace List
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy_Collections
  * @version    $Id: ArrayList.php, 2009-10-30 11:45 $

@@ -3,7 +3,7 @@
 /**
  * System
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: System.php, 2010-08-12 13:40 $

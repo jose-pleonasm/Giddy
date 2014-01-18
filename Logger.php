@@ -3,7 +3,7 @@
 /**
  * Logovaci mechanizmus
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: Logger.php, 2010-03-17 16:17 $

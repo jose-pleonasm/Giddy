@@ -3,7 +3,7 @@
 /**
  * Zakladni objekt frameworku
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: Common.php, 2011-04-20 12:20 $

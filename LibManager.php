@@ -3,7 +3,7 @@
 /**
  * Funkcionalita pro spravu knihoven
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: LibManager.php, 2010-10-11 17:18 $

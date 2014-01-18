@@ -5,7 +5,7 @@
  *
  * Implementace
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @subpackage DBI

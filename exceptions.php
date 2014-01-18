@@ -3,7 +3,7 @@
 /**
  * Zakladni vyjimky
  *
- * @link      http://jose.cz/GiddyFramework
+ * @link      https://github.com/jose-pleonasm/Giddy
  * @category  Giddy
  * @package   Giddy
  * @version   $Id: exceptions.php, 2011-03-29 16:16 $

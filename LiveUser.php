@@ -3,7 +3,7 @@
 /**
  * LiveUser
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: LiveUser.php, 2011-03-10 14:49 $

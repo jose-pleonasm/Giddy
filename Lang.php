@@ -3,7 +3,7 @@
 /**
  * Modul pro vycejazycny web
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: Lang.php, 2011-04-20 14:30 $

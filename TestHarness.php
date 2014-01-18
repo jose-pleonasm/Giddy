@@ -2,7 +2,7 @@
 /**
  * Mechanizmus pro automatizovani hromadnych testu
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: TestHarness.php, 2009-09-30 18:30 $

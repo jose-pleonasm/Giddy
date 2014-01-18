@@ -3,7 +3,7 @@
 /**
  * Soubor maker pro PhpPreprocessor
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: Macros.php, 2010-09-25 11:54 $

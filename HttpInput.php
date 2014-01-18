@@ -3,7 +3,7 @@
 /**
  * HttpRequest
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: HttpInput.php, 2011-02-09 10:53 $

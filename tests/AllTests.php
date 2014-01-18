@@ -2,7 +2,7 @@
 /**
  * Spusteni vsech testovacich trid
  *
- * @link      http://jose.cz/GiddyFramework
+ * @link      https://github.com/jose-pleonasm/Giddy
  * @category  Test
  * @package   Giddy
  * @version   $Id: AllTests.php, 2009-11-04 14:58 $

@@ -3,7 +3,7 @@
 /**
  * Jednoducha implementace SortedMap
  *
- * @link      http://jose.cz/GiddyFramework
+ * @link      https://github.com/jose-pleonasm/Giddy
  * @category  Giddy
  * @package   Giddy_Collections
  * @version   $Id: TreeMap.php, 2010-10-13 15:39 $

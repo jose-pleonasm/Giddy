@@ -3,7 +3,7 @@
 /**
  * Obecny mechanizmus validace dat
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: GeneralValidator.php, 2011-07-27 16:38 $

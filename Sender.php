@@ -3,7 +3,7 @@
 /**
  * Odesilatel pozadavku
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: Sender.php, 2010-01-22 13:55 $

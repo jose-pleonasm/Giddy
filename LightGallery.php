@@ -3,7 +3,7 @@
 /**
  * Jednoducha galerie
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: LightGallery.php, 2011-05-26 11:11 $

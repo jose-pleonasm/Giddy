@@ -5,7 +5,7 @@
  *
  * Modul pro export z XML
  *
- * @link      http://jose.cz/GiddyFramework
+ * @link      https://github.com/jose-pleonasm/Giddy
  * @category  Giddy
  * @package   Giddy_Backup
  * @version   $Id: ImportFromXml.php, 2010-10-08 11:28 $

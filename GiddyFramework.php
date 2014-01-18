@@ -3,7 +3,7 @@
 /**
  * Giddy Framework
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: GiddyFramework.php, 2011-08-12 13:27 $
@@ -24,7 +24,7 @@ final class GiddyFramework
 {
   const NAME = 'Giddy Framework';
 
-  const WEB = 'http://jose.cz/GiddyFramework';
+  const WEB = 'https://github.com/jose-pleonasm/Giddy';
 
   const VERSION = '1.0';
 

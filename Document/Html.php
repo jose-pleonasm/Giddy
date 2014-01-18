@@ -5,7 +5,7 @@
  * 
  * Experimentalni modul
  *
- * @link       http://jose.cz/GiddyFramework
+ * @link       https://github.com/jose-pleonasm/Giddy
  * @category   Giddy
  * @package    Giddy
  * @version    $Id: Html.php, 2010-10-12 18:13 $
